@@ -20,4 +20,4 @@
 ・nginx 1.21.1
 
 ##　　ER図
-![ER図](docs/er.drawio.png)
+![ER図](src/app/docs/er.drawio.png)
