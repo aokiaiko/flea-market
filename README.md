@@ -1,12 +1,11 @@
 # 　アプリ名：flea-market
-
+```bash
 ##　　環境構築
-　Dockerビルド
-   ・git clone git@github.com:Estra-Coachtech/laravel-docker-template.git
-   
-   ・docker-compose up -d --build
+##　Dockerビルド
+　　・git clone git@github.com:Estra-Coachtech/laravel-docker-template.git
+　　・docker-compose up -d --build
 
-　laravel環境構築
+##　laravel環境構築
    ・docker-compose exec php bash
    ・composer install
    ・cp .env.example .env　　環境変数を変更
