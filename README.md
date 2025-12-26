@@ -1,5 +1,5 @@
 # 　アプリ名：flea-market
-
+```bash
 ##　　環境構築
 ##　Dockerビルド
 　　・git clone git@github.com:Estra-Coachtech/laravel-docker-template.git
@@ -18,6 +18,6 @@
 ・Laravel 8.83.8
 ・MySQL 8.0
 ・nginx 1.21.1
-
+```
 ##　　ER図
 ![ER図](src/app/docs/er.drawio.png)
