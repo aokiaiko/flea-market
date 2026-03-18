@@ -11,7 +11,12 @@
    ・cp .env.example .env　　環境変数を変更
    ・php artisan key:generate
    ・php artisan migrate
+   ・php artisan db:seed
 
+##　　開発環境
+・アプリ: http://localhost/
+・ユーザー登録: http://localhost/register
+・phpMyAdmin: http://localhost:8080/
 
 ##　　使用技術
 ・PHP 8.1
@@ -20,4 +25,4 @@
 ・nginx 1.21.1
 ```
 ##　　ER図
-![ER図](src/app/docs/er.drawio.png)
+![ER図](src/app/docs/er.png)

@@ -1,0 +1,10 @@
+.auth__link {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth__link a {
+  color: #0073cc;
+  text-decoration: none;
+}
