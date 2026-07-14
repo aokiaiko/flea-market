@@ -15,12 +15,22 @@
       <h1 class="tittle">商品の出品</h1>
 
       <div class="item__section">
-        <h3 class="item-heading">商品画像</h3>
+        <h2 class="item-heading">商品画像</h2>
         <div class="select__image">
           <label class="select__image-button">画像を選択する
             <input class="file-input" type="file" name="images[]" multiple hidden>
           </label>
-        </div>   
+        </div> 
+        @error('images')
+               <div class="input-error">
+                {{$message}}
+               </div>
+          @enderror
+          @error('images.*')
+               <div class="input-error">
+                {{$message}}
+               </div>
+          @enderror  
       </div>
 
       <h2 class="item-detail">商品の詳細</h2>
@@ -57,6 +67,11 @@
             <input type="checkbox" id="baby-kids" name="category_ids[]" value="14" hidden>
               <label for="baby-kids"class="category-name">ベビー・キッズ</label>
         </div>
+        @error('category_ids')
+               <div class="input-error">
+                {{$message}}
+               </div>
+        @enderror
       </div>
 
         <div class="item__section">
@@ -68,6 +83,11 @@
                 <option value="やや汚れあり">やや傷や汚れあり</option>
                 <option value="状態が悪い">状態が悪い</option>
             </select>
+            @error('condition')
+               <div class="input-error">
+                {{$message}}
+               </div>
+            @enderror
         </div>
 
         <h2 class="item-detail">商品名と説明</h2>
@@ -75,6 +95,11 @@
         <div class="item__section">
             <h3 class="item-heading">商品名</h3>
             <input class="item-input" type="text" name="name" value="{{ old('name' )}}">
+            @error('name')
+               <div class="input-error">
+                {{$message}}
+               </div>
+            @enderror
         </div>
 
         <div class="item__section">
@@ -85,6 +110,11 @@
         <div class="item__section">
             <h3 class="item-heading">商品の説明</h3>
             <textarea class="item-textarea" name="description">{{ old('description' )}}</textarea>
+            @error('description')
+               <div class="input-error">
+                {{$message}}
+               </div>
+            @enderror
         </div>
 
         <div class="item__section">
@@ -92,6 +122,12 @@
             <div class="price-field">
                <span class="price-yen">¥</span>
                <input class="item-input price-input" type="number" name="price" min="0" value="{{ old('price' )}}" >
+               @error('price')
+                 <div class="input-error">
+                  {{$message}}
+                 </div>
+               @enderror
+            </div>
         </div>
 
         <button class="create-item__button" type="submit">出品する</button>

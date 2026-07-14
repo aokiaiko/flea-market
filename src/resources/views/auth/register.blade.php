@@ -9,7 +9,7 @@
 
 <div class="auth-content">
     <div class="auth-title">
-        <h2>会員登録</h2>
+        <h1>会員登録</h1>
     </div>
     <form class="form" action="/register" method="POST">
         @csrf

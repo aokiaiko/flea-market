@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Item;
 use App\Models\Purchase;
@@ -32,18 +31,18 @@ class MypageTest extends TestCase
 
     public function test_profile_image_is_displayed_on_mypage()
     {
-    $user = User::create([
+     $user = User::create([
         'name' => '画像ユーザー',
         'email' => 'image@example.com',
         'password' => bcrypt('password123'),
         'profile_image' => 'profiles/test.jpg',
         'email_verified_at' => now(),
-    ]);
+     ]);
 
-    $response = $this->actingAs($user)->get('/mypage');
+     $response = $this->actingAs($user)->get('/mypage');
 
-    $response->assertStatus(200);
-    $response->assertSee('profiles/test.jpg');
+     $response->assertStatus(200);
+     $response->assertSee('profiles/test.jpg');
     }
 
     public function test_selling_items_are_displayed_on_mypage()

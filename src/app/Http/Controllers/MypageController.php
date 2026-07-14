@@ -11,14 +11,14 @@ use App\Models\Purchase;
 
 class MypageController extends Controller
 {
-    public function edit()
+  public function edit()
   {
     $user = auth()->user(); 
     $address = $user->addresses()->latest()->first();
     return view('mypage/edit',compact('user','address'));
   }
 
-   public function show(Request $request)
+  public function show(Request $request)
   {
     $page =$request->page;
 
@@ -43,7 +43,7 @@ class MypageController extends Controller
      $data = $request->only(['postcode','address','building']);
 
     if ($request->filled('postcode') && $request->filled('address')) {
-        $address = $user->addresses()->first();
+        $address = $user->addresses()->latest()->first();
         $address ? $address->update($data) : $user->addresses()->create($data);
     }
 

@@ -72,7 +72,7 @@ class ItemsSeeder extends Seeder
             'name' => 'マイク',
             'price' => 8000,
             'brand'=>'なし',
-            'description' => '高音真のレコーディング用マイク',
+            'description' => '高音質のレコーディング用マイク',
             'condition' => '目立った傷や汚れなし',
             'status' => 0,
             'user_id' => $user2->id,

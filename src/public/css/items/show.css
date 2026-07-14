@@ -1,49 +1,49 @@
 .item-detail {
-  display: flex;
-  width: 100%;
-  max-width: 1400px;
-  margin: 70px auto;
-  gap: 30px;
-  align-items: flex-start;
-  padding: 10px 50px;
-  box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 70px auto;
+    gap: 30px;
+    align-items: flex-start;
+    padding: 10px 50px;
+    box-sizing: border-box;
 }
 
-.item-card{ 
-  width: 55%;
-  margin-left: 30px;
-  padding-left: 0;
+.item-card {
+    width: 55%;
+    margin-left: 30px;
+    padding-left: 0;
 }
 
 .item-image {
-  width: 80%;
+    width: 80%;
 }
 
-.item-card img{
-  width: 100%;
-  display: block;
+.item-card img {
+    width: 100%;
+    display: block;
 }
 
-.item-info{
+.item-info {
     width: 45%;
     padding-right: 20px;
 }
 
 .item-name {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0 0 8px;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 8px;
 }
 
 .item-brand {
-  margin: 0 0 20px;
-  color: #555;
-  font-size: 14px;
+    margin: 0 0 20px;
+    color: #555;
+    font-size: 14px;
 }
 
 .price {
-  font-size: 30px;
-  margin: 0 0 20px;
+    font-size: 30px;
+    margin: 0 0 20px;
 }
 
 .item-icons {
@@ -74,135 +74,139 @@
     color: red;
 }
 
-.section-title{
-  font-weight: bold;
-  margin: 35px 0 20px;
+.section-title {
+    font-weight: bold;
+    margin: 35px 0 20px;
 }
 
 .item-comment {
-  font-weight: bold;
-  margin: 35px 0 20px;
-  color: grey;
+    font-weight: bold;
+    margin: 35px 0 20px;
+    color: grey;
 }
 
 .info-row {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 .info-label {
-  width: 120px;
-  font-weight: bold;
-  margin: 0;
+    width: 120px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .info-content {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .item-category {
-  display: inline-block;
-  padding: 4px 14px;
-  background: #ddd;
-  border-radius: 20px;
-  font-size: 14px;
+    display: inline-block;
+    padding: 4px 14px;
+    background: #ddd;
+    border-radius: 20px;
+    font-size: 14px;
 }
 
 .item-condition-text {
-  margin: 0;
+    margin: 0;
 }
 
 .comment-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .comment-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
 }
 
 .comment-user-image {
-  width: 60px;
-  height: 60px;
-  flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
 }
 
 .comment-user-image img,
 .comment-user-image-placeholder {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  display: block;
-  object-fit: cover;
-  background: #d9d9d9;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+    background: #d9d9d9;
 }
 
 .comment-user-name {
-  margin: 0;
-  font-size: 24px;
-  font-weight: bold;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .comment-body {
-  width: 100%;
+    width: 100%;
 }
 
 .comment-text {
-  margin: 0;
-  background: #eee;
-  padding: 12px 16px;
-  border-radius: 4px;
-  line-height: 1.6;
+    margin: 0;
+    background: #eee;
+    padding: 12px 16px;
+    border-radius: 4px;
+    line-height: 1.6;
 }
 
 .form-comment {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .form-comment__label {
-  display: block;
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 10px;
 }
 
 .form-comment__input {
-  width: 100%;
-  resize: vertical;
-  padding: 10px;
-  font-size: 16px;
-  box-sizing: border-box;
-  border: 1px solid #999;
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #999;
 }
 
 .red-button {
-  background: #ff5b5b;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
+    background: #ff5b5b;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .purchase-button {
-  display: block;
-  width: 100%;
-  margin-top: 20px;
-  padding: 12px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
 }
 
 .comment-button {
-  display: block;
-  width: 100%;
-  margin-top: 20px;
-  padding: 14px;
-  font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 16px;
+}
+
+.input-error {
+    color: red;
 }

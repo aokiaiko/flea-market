@@ -8,6 +8,7 @@
 @section('content')
 
 <div class="mypage__content">
+  <h1 class="visually-hidden">マイページ</h1>
   <div class="profile-area ">
     <div class="profile-image">
           <div class="profile-image-preview">
@@ -38,8 +39,8 @@
 
 <div class="item-index">
      <div class="item-container">
-      @if($page === 'buy')
 
+      @if($page === 'buy')
        <div class="item-grid">
         @foreach($buyItems as $purchase )
           <div class="item-card">
@@ -55,7 +56,6 @@
        </div>
        
       @else
-
         <div class="item-grid">
           @foreach($sellItems as $item)
             <div class="item-card">

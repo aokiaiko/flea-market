@@ -1,105 +1,106 @@
 .mypage__content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .mypage__tittle {
-  text-align: center;
-  margin-bottom: 60px;
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .profile-image-area {
-  display: flex;
-  align-items: center;
-  
-  max-width: 500px;
-  margin: 0 auto 50px;
+    display: flex;
+    align-items: center;
+
+    max-width: 500px;
+    margin: 0 auto 50px;
 }
 
 .profile-area {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; 
-  text-align: center;
-  max-width: 800px;
-  width: 100%;
-  margin: 50px auto 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 50px auto 50px;
 }
 
-.profile-image{
-  display: flex;
+.profile-image {
+    display: flex;
 }
 .profile-image-preview {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #e0e0e0;
-  overflow: hidden; 
-  margin: 0px 30px;
-  margin-left: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    overflow: hidden;
+    margin: 0px 30px;
+    margin-left: 0;
 }
 
 .profile-image-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.user-name{
-  margin: 30px 30px;
-  font-weight: bold;
-  font-size: 20px;
+.user-name {
+    margin: 30px 30px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .button--red-outline {
-  padding: 8px 16px;
-  border: 1px solid #ff4b4b;
-  color: #ff4b4b;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #ff4b4b;
+    color: #ff4b4b;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-
 .mypage__form {
-  max-width: 500px;
-  margin: 0 auto;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .mypage__form-group {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .mypage__label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 18px;
-  font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .mypage__input {
-  width: 100%;
-  height: 45px;
-  padding: 0 10px;
-  border: 1px solid #999;
-  border-radius: 4px;
-  font-size: 14px;
+    width: 100%;
+    height: 45px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 .mypage__button {
-  width: 100%;
-  height: 48px;
-  margin-top: 20px;
-  background: #ff5b5b;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+    width: 100%;
+    height: 48px;
+    margin-top: 20px;
+    background: #ff5b5b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-
+.input-error {
+    color: red;
+}

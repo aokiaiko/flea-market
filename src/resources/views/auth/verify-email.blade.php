@@ -11,12 +11,13 @@
 
 <div class="verify-email__container">
  <div class="verify-email__wrapper">
-    <div class="verify-email__text">
+    <h1 class="visually-hidden">メール認証</h1>
+    <p class="verify-email__text">
         登録していただいたメールアドレスに認証メールを送付しました。<br>
         メール認証を完了してください。
-    </div>
+    </p>
 
-<a href="/email/verify" class="verify-email__button">
+<a href="http://localhost:8025" class="verify-email__button">
         認証はこちらから
     </a>
 

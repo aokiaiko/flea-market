@@ -34,7 +34,7 @@
            <li class="nav-item"><a href="/mypage">マイページ</a></li>
            <li class="nav-item"><a class="header__nav-button" href="/sell">出品</a></li>
            @else
-           <li class="nav-item"><a href="/login">ログイン</a></li>
+           <li class="nav-item"><a href="/login">ログインする</a></li>
            
            <li class="nav-item"><a href="/login">マイページ</a></li>
            <li class="nav-item"><a class="header__nav-button" href="/login">出品</a></li>

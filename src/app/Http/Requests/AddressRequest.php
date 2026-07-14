@@ -26,6 +26,18 @@ class AddressRequest extends FormRequest
         return [
             'postcode' =>['required','regex:/^\d{3}-\d{4}$/'],
             'address'  =>['required','max:100'],
+            'building' => ['nullable', 'string', 'max:100'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+             'postcode.required' => '郵便番号を入力してください',
+             'postcode.regex' => '8文字でハイフン(-)を入れてください',
+             'address.required' => '住所を入力してください',
+        ];   
+    }
+
+
 }

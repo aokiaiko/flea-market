@@ -42,7 +42,9 @@
             </form>
           @endif
         @else
+        <a href="/login" class="icon-button">
           <i class="fa-regular fa-heart"></i>
+        </a>
         @endauth
         <span>{{$item->favorites_count}}</span>
       </div>
@@ -102,6 +104,11 @@
       @csrf
       <label class="form-comment__label" for="comment">商品へのコメント</label>
       <textarea class="form-comment__input" id="comment" name="comment" cols="50" rows="5"></textarea>
+         @error('comment')
+           <div class="input-error">
+             {{ $message }}
+           </div>
+         @enderror
       <button class="red-button comment-button" type="submit">コメントを送信する</button>
     </form>
   </div>  

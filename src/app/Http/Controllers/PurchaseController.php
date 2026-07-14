@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Item;
-use App\Models\ItemImage;
 use App\Models\Purchase;
-use App\Models\Address;
 use App\Http\Requests\PurchaseRequest;
-use App\Http\Requests\AddressRequest;
 use Stripe\Stripe;
 use Stripe\Checkout\Session as CheckoutSession;
 
@@ -16,7 +12,7 @@ use Stripe\Checkout\Session as CheckoutSession;
 
 class PurchaseController extends Controller
 {
-        public function create($item_id)
+    public function create($item_id)
     {
         $item = Item::with('images')->findOrFail($item_id);
         $address = auth()->user()->addresses()->latest()->first();
@@ -25,7 +21,7 @@ class PurchaseController extends Controller
         return view('items/purchase',compact('item','address'));
     }
 
-        public function store(PurchaseRequest $request,$item_id)
+    public function store(PurchaseRequest $request,$item_id)
     {
         $item = Item::findOrFail($item_id);
 
@@ -69,7 +65,5 @@ class PurchaseController extends Controller
          ]);
 
           return redirect()->away($session->url);
-
-
     }
 }

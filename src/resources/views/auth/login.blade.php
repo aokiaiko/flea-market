@@ -10,7 +10,7 @@
 
 <div class="auth-content">
     <div class="auth-title">
-        <h2>ログイン</h2>
+        <h1>ログイン</h1>
     </div>
     <div class="auth-error">
       @if ($errors->has('login'))

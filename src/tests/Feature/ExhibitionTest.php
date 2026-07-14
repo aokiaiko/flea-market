@@ -1,6 +1,6 @@
 <?php
 
-/*namespace Tests\Feature;
+namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -22,32 +22,45 @@ class ExhibitionTest extends TestCase
             'name' => 'テストユーザー',
             'email' => 'sell@example.com',
             'password' => bcrypt('password123'),
+            'email_verified_at' => now(),
         ]);
 
         $image = UploadedFile::fake()->create('item.jpg',100, 'image/jpeg');
+
+        $category = Category::create([
+           'name' => 'テストカテゴリー',
+        ]);
+
+        $response = $this->actingAs($user)->get('/sell');
+
+        $response->assertStatus(200);
 
         $response = $this->actingAs($user)->post('/sell', [
             'name' => 'テスト商品',
             'price' => 3000,
             'brand' => 'テストブランド',
             'description' => 'テスト用の商品説明です',
-            'condition' => 1,
-            'category_id' => 1,
+            'condition' => '良好',
+            'category_ids' => [$category->id],
             'images' => [$image],
         ]);
 
-        $response->assertStatus(302);
+        $response->assertRedirect();
 
         $this->assertDatabaseHas('items', [
             'name' => 'テスト商品',
             'price' => 3000,
             'brand' => 'テストブランド',
             'description' => 'テスト用の商品説明です',
+            'condition' => '良好',
             'user_id' => $user->id,
         ]);
-    }
 
+        $item = Item::where('name', 'テスト商品')->firstOrFail();
 
-
-    
-}*/
+        $this->assertDatabaseHas('category_item', [
+           'item_id' => $item->id,
+           'category_id' => [$category->id],
+        ]);
+    }  
+}

@@ -1,65 +1,73 @@
-.mypage__content{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px;
-  box-sizing: border-box;
-
+.mypage__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    box-sizing: border-box;
 }
 
 .profile-area {
-  display: flex;
-  align-items: center;  
-  justify-content: space-around;
-  margin-bottom: 20px ;
-  padding: 20px 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 20px 5px 0px;
 }
 
-.profile-image{
-  display: flex;
-  align-items: center;
-  margin: 0 20px;
+.profile-image {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
 }
 
 .profile-image-preview {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #e0e0e0;
-  overflow: hidden; 
-  margin: 0;
-  flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    overflow: hidden;
+    margin: 0;
+    flex-shrink: 0;
 }
 
-.profile-image-preview img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.profile-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.user-name{
-  margin-left: 50px;
+.user-name {
+    margin-left: 50px;
 }
 
-.user-name p{
-  margin: 0;  
-  font-size: 20px;          
-  font-weight: bold;
+.user-name p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.edit__mypage-button{
-  margin-left: 40px;
+.edit__mypage-button {
+    margin-left: 40px;
 }
 
 .button--red-outline {
-  padding: 8px 16px;
-  border: 1px solid #ff4b4b;
-  color: #ff4b4b;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #ff4b4b;
+    color: #ff4b4b;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-
-
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

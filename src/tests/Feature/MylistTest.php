@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Item;
@@ -46,23 +45,23 @@ class MylistTest extends TestCase
 
     $response->assertStatus(200);
     $response->assertSee('いいね商品');
-    }
+   }
 
     public function test_sold_label_is_displayed_in_mylist_for_purchased_items()
     {
-    $user = User::create([
+     $user = User::create([
         'name' => 'テストユーザー',
         'email' => 'favorite2@example.com',
         'password' => bcrypt('password123'),
-    ]);
+     ]);
 
-    $seller = User::create([
+     $seller = User::create([
         'name' => '出品者',
         'email' => 'seller2@example.com',
         'password' => bcrypt('password123'),
-    ]);
+     ]);
 
-    $item = Item::create([
+     $item = Item::create([
         'name' => '売り切れ商品',
         'price' => 3000,
         'brand' => 'ブランド',
@@ -70,17 +69,17 @@ class MylistTest extends TestCase
         'condition' => 1,
         'status' => 1,
         'user_id' => $seller->id,
-    ]);
+     ]);
 
-    Favorite::create([
+     Favorite::create([
         'user_id' => $user->id,
         'item_id' => $item->id,
-    ]);
+     ]);
 
-    $response = $this->actingAs($user)->get('/?tab=mylist');
+     $response = $this->actingAs($user)->get('/?tab=mylist');
 
-    $response->assertStatus(200);
-    $response->assertSee('Sold');
+     $response->assertStatus(200);
+     $response->assertSee('Sold');
     }
 
     public function test_guest_cannot_view_mylist()

@@ -1,9 +1,9 @@
 .verify-email__container {
-    min-height: calc(70vh - 80px); 
-    margin-top: 30px;             
+    min-height: calc(70vh - 80px);
+    margin-top: 30px;
     display: flex;
-    justify-content: center; 
-    align-items: center;     
+    justify-content: center;
+    align-items: center;
 }
 
 .verify-email__wrapper {
@@ -11,10 +11,9 @@
     text-align: center;
 }
 
-
 .verify-email__text {
     font-weight: bold;
-   
+
     line-height: 1.6;
 }
 
@@ -41,4 +40,16 @@
 .success-message {
     margin-top: 15px;
     color: green;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

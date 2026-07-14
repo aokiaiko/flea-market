@@ -10,8 +10,14 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Contracts\RegisterResponse;
+use Laravel\Fortify\Http\Requests\LoginRequest as FortifyLoginRequest;
+use App\Http\Requests\LoginRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -20,7 +26,12 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->instance(RegisterResponse::class, new class implements RegisterResponse {
+            public function toResponse($request)
+            {
+                return redirect('/email/verify');
+            }
+        });
     }
 
     /**
@@ -29,22 +40,6 @@ class FortifyServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);
-        /**Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
-        Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
-        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
-
-        RateLimiter::for('login', function (Request $request) {
-            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
-
-            return Limit::perMinute(5)->by($throttleKey);
-        });
-
-        RateLimiter::for('two-factor', function (Request $request) {
-            return Limit::perMinute(5)->by($request->session()->get('login.id'));
-        });*/
-
-        
-
 
         Fortify::registerView(function () {
             return view('auth.register');
@@ -54,10 +49,28 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.login');
         });
 
+        Fortify::verifyEmailView(function () {
+        return view('auth.verify-email');
+        });
+
+        Fortify::authenticateUsing(function (Request $request) {
+           $user = User::where('email', $request->email)->first();
+
+           if (! $user || ! Hash::check($request->password, $user->password)) {
+               throw ValidationException::withMessages([
+                   'email' => ['ログイン情報が登録されていません。'],
+              ]);
+           }
+
+           return $user;
+        });
+
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
 
             return Limit::perMinute(10)->by($email . $request->ip());
        });
+
+       app()->bind(FortifyLoginRequest::class, LoginRequest::class);
     }
 }

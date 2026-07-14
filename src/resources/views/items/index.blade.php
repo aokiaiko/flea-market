@@ -9,6 +9,7 @@
 <div class="toppage-list">
   <div class="toppage-list__container">
    <div class="toppage-list__inner">
+    <h1 class="visually-hidden">商品一覧</h1>
      
     @if(request('tab') == 'mylist')
         <a class="tab" href="/">おすすめ</a>

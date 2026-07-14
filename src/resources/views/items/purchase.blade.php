@@ -10,6 +10,7 @@
     @csrf
 
 <div class="purchase__content">
+  <h1 class="visually-hidden">商品購入</h1>
 
   <div class="purchase__left">
 
@@ -19,24 +20,29 @@
          <img src="{{asset('storage/' . $item->images->first()->image_path) }}" alt="商品画像">
       </div>
       <div class="item-name">
-        <h3>{{ $item->name }}</h3>
+        <h2>{{ $item->name }}</h2>
         <p class="price">¥ {{$item->price}}</p>
       </div>
      </div>
     </div>
 
     <div class="purchase__section">
-      <p class="purchase__item">支払い方法</p>
-      <select  class="pay-method" name="payment_method" id="paymentMethod" required>
+      <h2 class="purchase__item">支払い方法</h2>
+      <select  class="pay-method" name="payment_method" id="paymentMethod" >
         <option value="">選択してください</option>
         <option value="konbini">コンビニ払い</option>
         <option value="card">カード支払い</option>
       </select>
+      @error('payment_method')
+                <div class="input-error">
+                   {{ $message }}
+                </div>
+      @enderror
     </div>
 
     <div class="purchase__section">
      <div class="purchase__address">
-        <p class="purchase__item">配送先</p>
+        <h2 class="purchase__item">配送先</h2>
         <a class="address-change" href="/purchase/address/{{$item->id}}">変更する</a>
      </div>
      <div class="address">
@@ -47,6 +53,11 @@
       @else
         <p>住所が登録されていません</p>
       @endif
+      @error('address_id')
+                <div class="input-error">
+                   {{ $message }}
+                </div>
+      @enderror
       </div>
     </div>
    </div>

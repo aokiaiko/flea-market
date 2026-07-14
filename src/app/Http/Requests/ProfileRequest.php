@@ -30,4 +30,16 @@ class ProfileRequest extends FormRequest
             'address'   =>['required'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+             'profile_image.mimes' => '画像はjpegまたはpng形式でアップロードしてください',
+             'name.required' => '名前を入力してください',
+             'name.nax' => '名前は20文字以内で入力してください',
+             'postcode.required' => '郵便番号を入力してください',
+             'postcode.regex' => '8文字でハイフン(-)を入れてください',
+             'address.required' => '住所を入力してください',
+        ];
+    }
 }

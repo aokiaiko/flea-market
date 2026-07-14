@@ -22,17 +22,13 @@ use App\Http\Controllers\FavoriteController;
 */
 
 Route::middleware('auth')->group(function () {
-    // 認証メール案内ページ（未認証でもログインしてれば見れる）
-    Route::get('/email/verify', function () {
-        return view('auth.verify-email');
-    })->name('verification.notice');
     Route::get('/mypage/profile', [MypageController::class, 'edit']);
     Route::patch('/mypage/profile', [MypageController::class, 'update']);
 });
 
-Route::middleware('auth','verified')->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
+    Route::get('/mypage/profile', [MypageController::class, 'edit']);
     Route::get('/mypage', [MyPageController::class, 'show']);
-    Route::get('/mypage/edit', [MyPageController::class, 'edit']);
     Route::get('/sell', [ItemController::class, 'create']);
     Route::post('/sell', [ItemController::class, 'store']);
     Route::post('/items/{item_id}/comments', [ItemController::class, 'storeComment']);
@@ -47,9 +43,5 @@ Route::middleware('auth','verified')->group(function () {
 Route::get('/', [ItemController::class,'index']);
 Route::get('/item/{item_id}', [ItemController::class,'show']);
 
-Route::get('/register', [AuthController::class,'showRegister']);
-Route::post('/register', [AuthController::class,'store']);
-Route::get('/login', [AuthController::class,'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
 
 

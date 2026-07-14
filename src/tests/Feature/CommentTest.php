@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Item;
 use App\Models\User;
@@ -114,33 +113,33 @@ class CommentTest extends TestCase
     public function test_comment_must_be_less_than_or_equal_to_255_characters()
     {
        $user = User::create([
-        'name' => 'コメントユーザー',
-        'email' => 'long-comment@example.com',
-        'password' => bcrypt('password123'),
-        'email_verified_at' => now(),
+          'name' => 'コメントユーザー',
+          'email' => 'long-comment@example.com',
+          'password' => bcrypt('password123'),
+          'email_verified_at' => now(),
        ]);
 
        $seller = User::create([
-        'name' => '出品者',
-        'email' => 'seller-long-comment@example.com',
-        'password' => bcrypt('password123'),
-        'email_verified_at' => now(),
+          'name' => '出品者',
+          'email' => 'seller-long-comment@example.com',
+          'password' => bcrypt('password123'),
+          'email_verified_at' => now(),
        ]);
 
        $item = Item::create([
-        'name' => 'テスト商品',
-        'price' => 3000,
-        'brand' => 'ブランド',
-        'description' => '説明',
-        'condition' => 1,
-        'status' => 0,
-        'user_id' => $seller->id,
+          'name' => 'テスト商品',
+          'price' => 3000,
+          'brand' => 'ブランド',
+          'description' => '説明',
+          'condition' => 1,
+          'status' => 0,
+          'user_id' => $seller->id,
        ]);
 
        $longComment = str_repeat('あ', 256);
 
        $response = $this->actingAs($user)->post("/items/{$item->id}/comments", [
-        'comment' => $longComment,
+         'comment' => $longComment,
        ]);
 
        $response->assertSessionHasErrors('comment');
